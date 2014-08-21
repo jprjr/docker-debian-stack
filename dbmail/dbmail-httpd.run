@@ -2,4 +2,4 @@
 
 ./setup
 
-exec /usr/sbin/dbmail-httpd -D -f /etc/dbmail-httpd.conf -n
+exec /usr/sbin/dbmail-httpd -D -f /etc/dbmail-httpd.conf -v
