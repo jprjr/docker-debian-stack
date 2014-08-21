@@ -3,7 +3,7 @@ FROM jprjr/debian-base:wheezy
 RUN export DEBIAN_FRONTEND=noninteractive && \
     echo "deb http://debian.nfgd.net/debian/ wheezy main" > /etc/apt/sources.list.d/dbmail.list && \
     apt-get update && \
-    apt-get install -y --force-yes dbmail
+    apt-get install -y --force-yes dbmail mysql-client
 
 RUN mkdir -p /opt/dbmail && \
     mkdir -p /etc/s6/dbmail-imapd && \
