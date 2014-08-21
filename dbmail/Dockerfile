@@ -11,6 +11,7 @@ RUN mkdir -p /opt/dbmail && \
     mkdir -p /etc/s6/dbmail-lmtpd && \
     ln -s /bin/true /etc/s6/dbmail-imapd/finish && \
     ln -s /bin/true /etc/s6/dbmail-httpd/finish && \
+    touch /etc/s6/dbmail-httpd/down && \
     ln -s /bin/true /etc/s6/dbmail-lmtpd/finish
 
 ADD dbmail-imapd.run /etc/s6/dbmail-imapd/run

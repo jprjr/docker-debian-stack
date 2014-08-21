@@ -2,4 +2,4 @@
 
 ./setup
 
-exec /usr/bin/dbmail-imapd -D -n
+exec /usr/sbin/dbmail-imapd -D -n
