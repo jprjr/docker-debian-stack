@@ -12,7 +12,13 @@ RUN mkdir -p /opt/dbmail && \
     ln -s /bin/true /etc/s6/dbmail-imapd/finish && \
     ln -s /bin/true /etc/s6/dbmail-httpd/finish && \
     touch /etc/s6/dbmail-httpd/down && \
-    ln -s /bin/true /etc/s6/dbmail-lmtpd/finish
+    ln -s /bin/true /etc/s6/dbmail-lmtpd/finish && \
+    touch /var/run/dbmail-imapd.pid && \
+    touch /var/run/dbmail-lmtpd.pid && \
+    touch /var/run/dbmail-httpd.pid && \
+    chown nobody:nogroup /var/run/dbmail-imapd.pid && \
+    chown nobody:nogroup /var/run/dbmail-lmtpd.pid && \
+    chown nobody:nogroup /var/run/dbmail-httpd.pid
 
 ADD dbmail-imapd.run /etc/s6/dbmail-imapd/run
 ADD dbmail-imapd.setup /etc/s6/dbmail-imapd/setup
