@@ -52,5 +52,9 @@ if [[ -z $SKIP_DBMAIL_SETUP ]]; then
     sed -i "s/##DB_NAME##/$DB_NAME/g" /etc/dbmail.conf
     sed -i "s/##DB_USER##/$DB_USER/g" /etc/dbmail.conf
     sed -i "s/##DB_PASS##/$DB_PASS/g" /etc/dbmail.conf
+    
+    LOGIN_NAME=$(echo $ADMIN_EMAIL | sed 's/@.*//')
+    
+    dbmail-users -a $LOGIN_NAME -w $ADMIN_PASS -p sha256 -s $ADMIN_EMAIL
 
 fi
