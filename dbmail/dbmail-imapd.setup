@@ -55,6 +55,6 @@ if [[ -z $SKIP_DBMAIL_SETUP ]]; then
     
     LOGIN_NAME=$(echo $ADMIN_EMAIL | sed 's/@.*//')
     
-    dbmail-users -a $LOGIN_NAME -w $ADMIN_PASS -p sha256 -s $ADMIN_EMAIL
+    dbmail-users -a "$LOGIN_NAME" -w "$ADMIN_PASS" -p sha256 -s "$ADMIN_EMAIL"
 
 fi
